@@ -31,6 +31,7 @@ namespace Errores
                     if (result == false) //Condicion por si la variable "resul" es falsa
                     {
                         Console.WriteLine("Ingrese un numero..."); //Mensaja de aviso...
+                        Matricula = int.Parse(Console.ReadLine()); //Volvemos pedir como int.Parse
                     }
 
                     Console.WriteLine(""); //cw para pasar de linea...
@@ -61,9 +62,16 @@ namespace Errores
                 {
                     Console.WriteLine("Error agregando el usuario, intente nuevamente..."); //Mensaje de aviso...
                     Console.ReadKey(); //Console ReadKey para que no se cierre el programa
-
+                    Console.Clear(); //Limpiamos la consola...
                 }
             }
+
+            //En resumen lo que hicimos fue darle a entender a la consola que ingresamos numeros
+            //en una variable que esta dada principalmente como string (ya que al ser string admite
+            //como numeros y letras) usamos el try.Parse con una variable igualada a 0 asi que cuando
+            //ingresamos letras en la matricula primero iguala la variable "Matricula"
+            //como int.Parse y de ahi te manda al catch para darte el mensaje de ingreses solo numero
+            //y si no ingresaste letras el ciclo sigue igual dependiendo la condicion que le des al if.
         }
     }
 }
